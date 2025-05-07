@@ -11,6 +11,9 @@ const CandidateCard = ({ candidate, index, onClick }) => (
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
                 onClick={() => onClick(candidate)}
+                data-cy="candidate-card"
+                data-id={candidate.id}
+                data-fase={candidate.currentInterviewStep || candidate.fase}
             >
                 <Card.Body>
                     <Card.Title>{candidate.name}</Card.Title>
