@@ -6,11 +6,17 @@
     "scripts": {
         "start": "node dist/index.js",
         "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+        "start:test": "NODE_ENV=test PORT=3011 ts-node-dev --respawn --transpile-only -r dotenv/config src/index.ts dotenv_config_path=.env.test",
         "build": "tsc",
         "test": "jest",
         "prisma:init": "npx prisma init",
         "prisma:generate": "npx prisma generate",
-        "start:prod": "npm run build && npm start"
+        "start:prod": "npm run build && npm start",
+        "test:db:setup": "node scripts/test-setup.js",
+        "test:setup": "npm run test:db:setup"
+    },
+    "prisma": {
+        "seed": "ts-node prisma/seed.ts"
     },
     "keywords": [],
     "author": "",
@@ -37,7 +43,7 @@
         "prettier": "^3.2.5",
         "prisma": "^5.13.0",
         "ts-jest": "^29.1.2",
-        "ts-node": "^9.1.1",
+        "ts-node": "^10.9.2",
         "ts-node-dev": "^1.1.6",
         "typescript": "^4.9.5"
     }
