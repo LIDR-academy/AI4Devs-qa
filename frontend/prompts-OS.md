@@ -1,6 +1,6 @@
 Using Cursor with agent Claude 3.7-sonnet-thinking
 
-**Prompt 1**:
+**Prompt 1:**
 You are a senior qa engineer with strong knowledge in typeScript and React. You know how to apply all the best practices for end-to-end testing. You will help me generate a end-to-end test for a sepcific page of this project in the @frontend .
 The actions you have to perform inside the @frontend  are:
 1. install Cypress and write a script to setup and configure it properly before first launch
@@ -14,3 +14,5 @@ c. Check that each candidate is located in the correct column regarding its stag
 a. the card is moving to the corresponding column
 b. Check that a PUT call is made to /candidate/:id  to the backend with its new stage 
 
+**Prompt 2:**
+Run the command npm run test:e2e and fix the given issues
