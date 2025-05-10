@@ -11,6 +11,7 @@ const PositionsDetails = () => {
     const [stages, setStages] = useState([]);
     const [positionName, setPositionName] = useState('');
     const [selectedCandidate, setSelectedCandidate] = useState(null);
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,6 +28,7 @@ const PositionsDetails = () => {
                 setPositionName(data.interviewFlow.positionName);
             } catch (error) {
                 console.error('Error fetching interview flow:', error);
+                setError('Error al cargar el flujo de entrevistas');
             }
         };
 
@@ -49,6 +51,7 @@ const PositionsDetails = () => {
                 );
             } catch (error) {
                 console.error('Error fetching candidates:', error);
+                setError('Error al cargar los candidatos');
             }
         };
 
@@ -74,6 +77,7 @@ const PositionsDetails = () => {
             }
         } catch (error) {
             console.error('Error updating candidate step:', error);
+            setError('Error al actualizar la fase');
         }
     };
 
@@ -111,10 +115,21 @@ const PositionsDetails = () => {
                 Volver a Posiciones
             </Button>
             <h2 className="text-center mb-4">{positionName}</h2>
+            {error && (
+                <div data-testid="error-message" className="alert alert-danger">
+                    {error}
+                </div>
+            )}
             <DragDropContext onDragEnd={onDragEnd}>
                 <Row>
                     {stages.map((stage, index) => (
-                        <StageColumn key={index} stage={stage} index={index} onCardClick={handleCardClick} />
+                        <StageColumn 
+                            key={index} 
+                            stage={stage} 
+                            index={index} 
+                            onCardClick={handleCardClick}
+                            data-testid={`stage-column-${index}`}
+                        />
                     ))}
                 </Row>
             </DragDropContext>

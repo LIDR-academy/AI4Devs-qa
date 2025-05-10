@@ -48,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^10.0.3",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "cypress": "^14.3.3"
   }
 }
