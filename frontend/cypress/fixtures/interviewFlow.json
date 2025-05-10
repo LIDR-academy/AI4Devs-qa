@@ -1,0 +1,25 @@
+{
+  "interviewFlow": {
+    "interviewFlow": {
+      "interviewSteps": [
+        {
+          "id": 1,
+          "name": "Applied"
+        },
+        {
+          "id": 2,
+          "name": "Interview"
+        },
+        {
+          "id": 3,
+          "name": "Offer"
+        },
+        {
+          "id": 4,
+          "name": "Hired"
+        }
+      ]
+    },
+    "positionName": "Software Engineer"
+  }
+}

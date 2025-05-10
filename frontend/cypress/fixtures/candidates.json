@@ -1,0 +1,16 @@
+[
+  {
+    "candidateId": 1,
+    "fullName": "John Doe",
+    "currentInterviewStep": "Applied",
+    "applicationId": 101,
+    "averageScore": 4.5
+  },
+  {
+    "candidateId": 2,
+    "fullName": "Jane Smith",
+    "currentInterviewStep": "Interview",
+    "applicationId": 102,
+    "averageScore": 4.8
+  }
+]
