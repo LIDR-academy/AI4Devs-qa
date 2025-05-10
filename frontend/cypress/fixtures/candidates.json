@@ -1,0 +1,30 @@
+[
+  {
+    "candidateId": 1,
+    "fullName": "Alice Smith",
+    "averageScore": 3,
+    "currentInterviewStep": "CV Review",
+    "applicationId": 101
+  },
+  {
+    "candidateId": 2,
+    "fullName": "Bob Johnson",
+    "averageScore": 4,
+    "currentInterviewStep": "Phone Interview",
+    "applicationId": 102
+  },
+  {
+    "candidateId": 3,
+    "fullName": "Charlie Brown",
+    "averageScore": 2,
+    "currentInterviewStep": "Technical Test",
+    "applicationId": 103
+  },
+  {
+    "candidateId": 4,
+    "fullName": "Diana Prince",
+    "averageScore": 5,
+    "currentInterviewStep": "Final Interview",
+    "applicationId": 104
+  }
+]
