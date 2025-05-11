@@ -22,11 +22,18 @@ Cypress.Commands.add('loadPositionDetails', (positionId: string) => {
 
 // Comando personalizado para verificar elementos drag and drop de react-beautiful-dnd
 Cypress.Commands.add('verifyDragAndDropElements', () => {
-  // Aquí dentro sí puedes usar comandos cy.*
-  cy.get('[data-rbd-droppable-id]').should('exist');
-  cy.get('[data-rbd-draggable-id]').then($elements => {
-    if ($elements.length > 0) {
-      cy.wrap($elements).should('have.attr', 'data-rbd-draggable-context-id');
+  // Verificar que el componente DragDropContext existe
+  cy.get('.row').should('have.attr', 'data-rbd-droppable-context-id');
+  
+  // Verificar que hay columnas (droppables)
+  cy.get('[data-rbd-droppable-id]').should('have.length.at.least', 2);
+  
+  // Verificar que hay candidatos (draggables) si existen
+  cy.get('[data-rbd-draggable-id]').then($draggables => {
+    if ($draggables.length > 0) {
+      cy.wrap($draggables)
+        .should('have.attr', 'data-rbd-draggable-context-id')
+        .and('have.attr', 'data-rbd-draggable-id');
     }
   });
 });

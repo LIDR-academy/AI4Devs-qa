@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-describe('Position Navigation', () => {
-  it('should navigate from positions list to position details', () => {
+describe('Navegación entre Posiciones', () => {
+  it('debería navegar desde la lista de posiciones a los detalles de una posición', () => {
     // Iniciar en la lista de posiciones
     cy.visit('/positions');
     
