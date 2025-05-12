@@ -17,6 +17,13 @@ Este proyecto es una aplicación full-stack con un frontend en React y un backen
   - `tsconfig.json`: Archivo de configuración de TypeScript.
 - `frontend/`: Contiene el código del lado del cliente escrito en React.
   - `src/`: Contiene el código fuente para el frontend.
+    - `components/`: Componentes React, incluyendo vistas principales y tablero Kanban.
+    - `services/`: Servicios que comunican con el backend.
+    - `assets/`: Archivos estáticos como imágenes y logos.
+  - `cypress/`: Contiene pruebas end-to-end.
+    - `e2e/`: Pruebas de flujos completos de usuario.
+    - `fixtures/`: Datos mock para pruebas.
+    - `support/`: Comandos y configuración adicional de Cypress.
   - `public/`: Contiene archivos estáticos como el archivo HTML e imágenes.
   - `build/`: Contiene la construcción lista para producción del frontend.
 - `.env`: Contiene las variables de entorno.
@@ -30,6 +37,14 @@ El proyecto está dividido en dos directorios principales: `frontend` y `backend
 ### Frontend
 
 El frontend es una aplicación React y sus archivos principales están ubicados en el directorio `src`. El directorio `public` contiene activos estáticos y el directorio `build` contiene la construcción de producción de la aplicación.
+
+#### Componentes principales:
+
+- **RecruiterDashboard**: Dashboard principal para los reclutadores
+- **AddCandidateForm**: Formulario para añadir nuevos candidatos
+- **Positions**: Lista de posiciones disponibles
+- **PositionDetails**: Vista detallada con tablero Kanban para gestionar candidatos
+- **CandidateDetails**: Panel lateral para visualizar detalles de candidatos
 
 ### Backend
 
@@ -127,6 +142,67 @@ ts-node seed.ts
 ```
 
 Una vez has dado todos los pasos, deberías poder guardar nuevos candidatos, tanto via web, como via API, verlos en la base de datos y obtenerlos mediante GET por id. 
+
+## Pruebas
+
+### Backend
+
+El backend incluye pruebas unitarias para validar la lógica de negocio y los controladores. Para ejecutarlas:
+
+```
+cd backend
+npm test
+```
+
+### Frontend
+
+#### Pruebas Unitarias
+
+El frontend contiene pruebas unitarias para los componentes principales:
+
+```
+cd frontend
+npm test
+```
+
+#### Pruebas End-to-End (E2E)
+
+Se han implementado pruebas end-to-end utilizando Cypress para verificar flujos completos de usuario:
+
+- Dashboard y navegación principal
+- Formulario de candidatos y envío
+- Visualización y filtrado de posiciones
+- Tablero Kanban para gestionar candidatos
+- Arrastrar y soltar candidatos entre columnas
+
+Para ejecutar las pruebas E2E:
+
+1. Inicia el frontend y backend:
+```
+# En una terminal
+cd backend && npm start
+
+# En otra terminal
+cd frontend && npm start
+```
+
+2. Ejecuta las pruebas en modo visual:
+```
+cd frontend
+npm run cypress:open
+```
+
+3. O ejecuta todas las pruebas en modo headless:
+```
+cd frontend
+npm run cypress:run
+```
+
+## Notas de Implementación
+
+- **Rutas de API**: Las rutas del backend utilizan convenciones RESTful y están documentadas en el archivo `api-spec.yaml`.
+- **Tablero Kanban**: Implementado con `react-beautiful-dnd` para arrastrar y soltar candidatos entre etapas.
+- **Consideraciones de seguridad**: Validación de datos tanto en frontend como backend.
 
 ```
 POST http://localhost:3010/candidates
