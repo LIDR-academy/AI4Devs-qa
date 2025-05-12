@@ -1,5 +1,8 @@
 # Conversación sobre pruebas E2E y Tablero Kanban
 
+Modelo: Claude 3.7 Sonnet
+IDE: Cursor
+
 ## Prompt 1:
 Revisa el proyecto @frontend, explica las vistas del proyecto y su función 
 
