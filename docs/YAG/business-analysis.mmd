@@ -1,0 +1,19 @@
+flowchart TD
+    A[Registro de Candidato] --> B[Carga de CV]
+    B --> C[Aplicación a Posición]
+    C --> D[Flujo de Entrevistas]
+    D --> E{Decisión}
+    E -->|Aprobado| F[Siguiente Etapa]
+    F --> D
+    E -->|Rechazado| G[Fin del Proceso]
+    E -->|Contratado| H[Finalización Exitosa]
+    
+    I[Creación de Empresa] --> J[Creación de Posición]
+    J --> K[Definición de Flujo de Entrevistas]
+    K --> L[Publicación de Posición]
+    L --> C
+    
+    M[Registro de Empleado] --> N[Asignación como Entrevistador]
+    N --> O[Realización de Entrevista]
+    O --> P[Registro de Resultado]
+    P --> E

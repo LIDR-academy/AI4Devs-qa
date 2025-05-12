@@ -6,5 +6,10 @@
     "schema": "backend/prisma/schema.prisma"
   },
   "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.3.0",
+    "cypress": "^14.3.3"
+  },
+  "scripts": {
+    "e2e": "cypress run --spec cypress/integration/YAG/position-management.spec.js"
   }
 }
