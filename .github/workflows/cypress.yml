@@ -1,0 +1,111 @@
+name: Cypress E2E Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    
+    services:
+      # Servicio de PostgreSQL para las pruebas
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: LTIdbUser
+          POSTGRES_PASSWORD: D1ymf8wyQEGthFR1E9xhCq
+          POSTGRES_DB: LTIdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      # Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      
+      # Instalar dependencias del backend
+      - name: Install Backend Dependencies
+        working-directory: ./backend
+        run: npm ci
+      
+      # Generar el cliente Prisma
+      - name: Generate Prisma Client
+        working-directory: ./backend
+        run: npx prisma generate
+      
+      # Migrar la base de datos
+      - name: Migrate Database
+        working-directory: ./backend
+        run: npx prisma migrate deploy
+        env:
+          DATABASE_URL: postgresql://LTIdbUser:D1ymf8wyQEGthFR1E9xhCq@localhost:5432/LTIdb
+      
+      # Ejecutar seed de Prisma
+      - name: Run Prisma Seed
+        working-directory: ./backend
+        run: npx prisma db seed
+        env:
+          DATABASE_URL: postgresql://LTIdbUser:D1ymf8wyQEGthFR1E9xhCq@localhost:5432/LTIdb
+      
+      # Iniciar el servidor backend
+      - name: Start Backend Server
+        working-directory: ./backend
+        run: npm run dev &
+        env:
+          PORT: 3010
+          DATABASE_URL: postgresql://LTIdbUser:D1ymf8wyQEGthFR1E9xhCq@localhost:5432/LTIdb
+      
+      # Instalar dependencias del frontend
+      - name: Install Frontend Dependencies
+        working-directory: ./frontend
+        run: npm ci
+      
+      # Iniciar el servidor frontend
+      - name: Start Frontend Server
+        working-directory: ./frontend
+        run: npm start &
+        env:
+          PORT: 3000
+      
+      # Esperar a que los servidores estén listos
+      - name: Wait for servers
+        run: |
+          echo "Waiting for servers to start..."
+          npx wait-on http://localhost:3000
+          npx wait-on http://localhost:3010/positions
+      
+      # Ejecutar las pruebas de Cypress
+      - name: Run Cypress Tests
+        working-directory: ./frontend
+        run: npm run test:e2e:ci
+        env:
+          FRONTEND_URL: http://localhost:3000
+          BACKEND_URL: http://localhost:3010
+      
+      # Guardar videos y capturas de pantalla de fallos como artefactos
+      - name: Upload Cypress Screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: frontend/cypress/screenshots
+      
+      - name: Upload Cypress Videos
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos
+          path: frontend/cypress/videos 

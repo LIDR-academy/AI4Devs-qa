@@ -7,7 +7,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.97",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "bootstrap": "^5.3.3",
@@ -32,7 +31,8 @@
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test:e2e": "cypress run"
+    "test:e2e": "cypress run",
+    "test:e2e:ci": "cypress run --config-file cypress.ci.config.ts"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@types/cypress": "^0.1.6",
+    "@types/node": "^22.15.17",
     "cypress": "^14.3.3"
   }
 }
