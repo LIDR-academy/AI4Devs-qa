@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Anotar todos los prompts inferidos en prompts.md
+globs:
+  - "**/*"
+alwaysApply: true
+---
+Por favor, cada vez que se infiera un prompt durante la generación de código o interacción, añade una nueva línea al archivo `prompts-CNV.md` dentro de la carpeta `prompts` que está en la raíz del proyecto, con el texto exacto del prompt inferido. Añade líneas de separacion entre prompt y prompt.

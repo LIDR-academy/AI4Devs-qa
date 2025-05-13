@@ -1,0 +1,9 @@
+{
+  "exclude": [
+    "cypress/**/*",
+    "**/*.cy.js",
+    "**/*.cy.ts",
+    "**/*.cy.jsx",
+    "**/*.cy.tsx"
+  ]
+} 
