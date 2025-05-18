@@ -48,7 +48,7 @@ const Positions: React.FC = () => {
             <Button variant="link" onClick={() => navigate('/')} className="mb-3">
                 Volver al Dashboard
             </Button>
-            <h2 className="text-center mb-4">Posiciones</h2>
+            <h2 className="text-center mb-4" data-test-id="positions-page-title">Posiciones</h2>
             <Row className="mb-4">
                 <Col md={3}>
                     <Form.Control type="text" placeholder="Buscar por título" />
@@ -88,7 +88,7 @@ const Positions: React.FC = () => {
                                     {position.status}
                                 </span>
                                 <div className="d-flex justify-content-between mt-3">
-                                    <Button variant="primary" onClick={() => navigate(`/positions/${position.id}`)}>Ver proceso</Button>
+                                    <Button variant="primary" onClick={() => navigate(`/positions/${position.id}`)} data-test-id="view-position-process-button">Ver proceso</Button>
                                     <Button variant="secondary">Editar</Button>
                                 </div>
                             </Card.Body>
