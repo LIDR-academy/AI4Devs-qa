@@ -33,8 +33,8 @@ paths:
                   pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
                 phone:
                   type: string
-                  description: Phone number of the candidate
-                  pattern: '^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$'
+                  description: Phone number of the candidate. Accepts Spanish local (9 digits starting with 6, 7 or 9) or international format (+countrycode followed by 7-15 digits).
+                  pattern: '^(\+\d{7,15}|(6|7|9)\d{8})$'
                 address:
                   type: string
                   description: Address of the candidate
