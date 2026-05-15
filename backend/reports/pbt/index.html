@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>PBT Report — AI4Devs-qa backend</title>
+<style>
+  :root { color-scheme: light dark; --pass:#1a7f37; --fail:#cf222e; --pend:#9a6700; --muted:#6e7781; --bg:#f6f8fa; --card:#fff; --border:#d0d7de; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0d1117; --card:#161b22; --border:#30363d; --muted:#8b949e; } body { color:#e6edf3; } }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; margin:0; padding:24px; background:var(--bg); }
+  h1 { margin:0 0 4px; font-size:22px; }
+  h3 { margin:0; font-size:16px; font-family: ui-monospace, SFMono-Regular, monospace; }
+  h4 { margin:16px 0 6px; font-size:14px; }
+  .muted { color:var(--muted); font-weight:400; font-size:13px; }
+  .summary { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:12px; margin:20px 0 28px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:14px 16px; }
+  .card .label { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+  .card .value { font-size:24px; font-weight:600; margin-top:4px; }
+  .card.pass .value { color:var(--pass); }
+  .card.fail .value { color:var(--fail); }
+  .suite { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px 20px; margin-bottom:16px; }
+  .suite header { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .suite-meta { display:flex; gap:10px; align-items:center; }
+  .group { margin-top:8px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--border); }
+  th { font-weight:600; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.5px; }
+  td.num, th.num { text-align:right; font-variant-numeric: tabular-nums; }
+  td.title { font-family: ui-monospace, SFMono-Regular, monospace; font-size:13px; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; }
+  .badge-passed { background:rgba(26,127,55,.15); color:var(--pass); }
+  .badge-failed { background:rgba(207,34,46,.15); color:var(--fail); }
+  .badge-pending, .badge-skipped, .badge-todo { background:rgba(154,103,0,.15); color:var(--pend); }
+  footer { margin-top:24px; color:var(--muted); font-size:12px; }
+</style>
+</head>
+<body>
+  <h1>PBT Report — AI4Devs-qa backend</h1>
+  <div class="muted">Property-based tests (fast-check) · generado 6/5/2026, 8:31:48</div>
+  <div class="summary">
+    <div class="card pass"><div class="label">Resultado</div><div class="value">OK</div></div>
+    <div class="card"><div class="label">Suites</div><div class="value">2</div></div>
+    <div class="card"><div class="label">Tests</div><div class="value">25</div></div>
+    <div class="card pass"><div class="label">Passed</div><div class="value">25</div></div>
+    <div class="card fail"><div class="label">Failed</div><div class="value">0</div></div>
+    <div class="card"><div class="label">Duración total</div><div class="value">1.42 s</div></div>
+    <div class="card"><div class="label">Inicio</div><div class="value" style="font-size:14px">6/5/2026, 8:29:55</div></div>
+  </div>
+  
+    <section class="suite suite-passed">
+      <header>
+        <h3>src/application/validator.property.spec.ts</h3>
+        <div class="suite-meta">
+          <span class="badge badge-passed">passed</span>
+          <span class="muted">18 tests · 1.28 s</span>
+        </div>
+      </header>
+      
+      <div class="group">
+        <h4>validateName — properties <span class="muted">(5)</span></h4>
+        <table>
+          <thead><tr><th style="width:90px">Estado</th><th>Test</th><th style="width:90px" class="num">Duración</th></tr></thead>
+          <tbody>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">N1: any name with 2-100 valid chars passes</td>
+        <td class="num">8 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">N2: any name containing an illegal char fails</td>
+        <td class="num">43 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">N3: any name shorter than 2 chars fails</td>
+        <td class="num">21 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">N4: any name longer than 100 chars fails</td>
+        <td class="num">33 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">N5 [spec-gap]: names 51-100 chars pass validator but violate api-spec maxLength 50</td>
+        <td class="num">4 ms</td>
+      </tr></tbody>
+        </table>
+      </div>
+      <div class="group">
+        <h4>validateEmail — properties <span class="muted">(3)</span></h4>
+        <table>
+          <thead><tr><th style="width:90px">Estado</th><th>Test</th><th style="width:90px" class="num">Duración</th></tr></thead>
+          <tbody>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">E1: any well-formed local@domain.tld passes</td>
+        <td class="num">4 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">E2: any string without @ fails</td>
+        <td class="num">27 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">E3 [spec-gap]: emails over 255 chars pass (no maxLength check)</td>
+        <td class="num">9 ms</td>
+      </tr></tbody>
+        </table>
+      </div>
+      <div class="group">
+        <h4>validatePhone — properties <span class="muted">(4)</span></h4>
+        <table>
+          <thead><tr><th style="width:90px">Estado</th><th>Test</th><th style="width:90px" class="num">Duración</th></tr></thead>
+          <tbody>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P1: any valid Spanish 9-digit number passes</td>
+        <td class="num">3 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P2: any valid international +digits number passes</td>
+        <td class="num">8 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P3: falsy phone values never throw (optional field)</td>
+        <td class="num">4 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P4: any truthy string outside regex fails</td>
+        <td class="num">20 ms</td>
+      </tr></tbody>
+        </table>
+      </div>
+      <div class="group">
+        <h4>validateDate — properties <span class="muted">(3)</span></h4>
+        <table>
+          <thead><tr><th style="width:90px">Estado</th><th>Test</th><th style="width:90px" class="num">Duración</th></tr></thead>
+          <tbody>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">D1: any YYYY-MM-DD formatted string passes</td>
+        <td class="num">4 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">D2 [spec-gap]: semantically invalid dates pass (format-only check)</td>
+        <td class="num">9 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">D3: any non-YYYY-MM-DD format fails</td>
+        <td class="num">22 ms</td>
+      </tr></tbody>
+        </table>
+      </div>
+      <div class="group">
+        <h4>validateCandidateData — properties <span class="muted">(3)</span></h4>
+        <table>
+          <thead><tr><th style="width:90px">Estado</th><th>Test</th><th style="width:90px" class="num">Duración</th></tr></thead>
+          <tbody>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">C1: any truthy id bypasses all validation</td>
+        <td class="num">6 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">C2: any valid minimal candidate passes</td>
+        <td class="num">12 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">C3: optional fields as undefined never cause errors</td>
+        <td class="num">5 ms</td>
+      </tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="suite suite-passed">
+      <header>
+        <h3>src/application/services/interviewAdvanceService.property.spec.ts</h3>
+        <div class="suite-meta">
+          <span class="badge badge-passed">passed</span>
+          <span class="muted">7 tests · 146 ms</span>
+        </div>
+      </header>
+      
+      <div class="group">
+        <h4>findNextInterviewStep — property-based tests <span class="muted">(7)</span></h4>
+        <table>
+          <thead><tr><th style="width:90px">Estado</th><th>Test</th><th style="width:90px" class="num">Duración</th></tr></thead>
+          <tbody>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P1: next step always belongs to the input array</td>
+        <td class="num">12 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P2: next step has strictly greater orderIndex than current</td>
+        <td class="num">5 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P3: no step exists between current and next orderIndex</td>
+        <td class="num">11 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P4: returns null when current step is the last by orderIndex</td>
+        <td class="num">4 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P6: throws when currentStepId does not exist in steps</td>
+        <td class="num">26 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P7: does not mutate the input array</td>
+        <td class="num">11 ms</td>
+      </tr>
+      <tr class="t t-passed">
+        <td><span class="badge badge-passed">passed</span></td>
+        <td class="title">P8: result is the same regardless of input array order</td>
+        <td class="num">9 ms</td>
+      </tr></tbody>
+        </table>
+      </div>
+    </section>
+  <footer>Generado a partir de <code>reports/pbt/results.json</code> · 2026-05-06T13:31:48.290Z</footer>
+</body>
+</html>
