@@ -1,43 +1,87 @@
-# Getting Started with Create React App
+# Frontend para Sistema de Seguimiento de Talento
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es la parte frontend de la aplicación de seguimiento de talento, construida con React.
 
-## Available Scripts
+## Estructura del Proyecto
 
-In the project directory, you can run:
+El frontend está organizado en componentes que representan las distintas vistas de la aplicación:
 
-### `npm start`
+- **RecruiterDashboard**: Dashboard principal del reclutador
+- **AddCandidateForm**: Formulario para agregar nuevos candidatos
+- **Positions**: Lista de posiciones disponibles
+- **PositionDetails**: Vista detallada de una posición con tablero Kanban
+- **CandidateDetails**: Panel lateral con detalles de un candidato
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instalación
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para instalar las dependencias del proyecto:
 
-### `npm test`
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Ejecución
 
-### `npm run build`
+Para iniciar el servidor de desarrollo:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Construcción
 
-### `npm run eject`
+Para construir la aplicación para producción:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm run build
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Pruebas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Pruebas de Integración y Unitarias
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para ejecutar las pruebas unitarias:
+
+```bash
+npm test
+```
+
+### Pruebas End-to-End (E2E)
+
+Este proyecto utiliza Cypress para pruebas end-to-end. Las pruebas cubren los siguientes escenarios:
+
+- Navegación por el dashboard principal
+- Formulario de candidatos y su envío
+- Visualización de posiciones
+- Detalles de posiciones y tablero Kanban
+
+#### Ejecución de Pruebas E2E
+
+Para abrir el explorador de Cypress:
+
+```bash
+npm run cypress:open
+```
+
+Para ejecutar todas las pruebas en modo headless:
+
+```bash
+npm run test:e2e
+```
+
+#### Estructura de las Pruebas E2E
+
+Las pruebas están organizadas en el directorio `cypress/e2e/` con los siguientes archivos:
+
+- `dashboard.cy.ts`: Pruebas para el dashboard
+- `candidates.cy.ts`: Pruebas para el formulario de candidatos
+- `positions.cy.ts`: Pruebas para la lista de posiciones
+- `position-details.cy.ts`: Pruebas para los detalles de posición
+- `candidate-form-submit.cy.ts`: Pruebas para el envío del formulario
+
+Los mocks de datos para pruebas se encuentran en `cypress/fixtures/`.
 
 ## Learn More
 
