@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { Card, Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 type Position = {
     id: number;
@@ -48,7 +48,7 @@ const Positions: React.FC = () => {
             <Button variant="link" onClick={() => navigate('/')} className="mb-3">
                 Volver al Dashboard
             </Button>
-            <h2 className="text-center mb-4">Posiciones</h2>
+            <h2 className="text-center mb-4" data-cy="position-title">Posiciones</h2>
             <Row className="mb-4">
                 <Col md={3}>
                     <Form.Control type="text" placeholder="Buscar por título" />
@@ -77,9 +77,9 @@ const Positions: React.FC = () => {
             <Row>
                 {positions.map((position, index) => (
                     <Col md={4} key={index} className="mb-4">
-                        <Card className="shadow-sm">
+                        <Card className="shadow-sm" data-cy="candidate-card" data-candidate-id={position.id} data-stage-id="1">
                             <Card.Body>
-                                <Card.Title>{position.title}</Card.Title>
+                                <Card.Title data-cy="column-title">{position.title}</Card.Title>
                                 <Card.Text>
                                     <strong>Manager:</strong> {position.contactInfo}<br />
                                     <strong>Deadline:</strong> {position.applicationDeadline}
@@ -88,7 +88,7 @@ const Positions: React.FC = () => {
                                     {position.status}
                                 </span>
                                 <div className="d-flex justify-content-between mt-3">
-                                    <Button variant="primary" onClick={() => navigate(`/positions/${position.id}`)}>Ver proceso</Button>
+                                    <Button variant="primary" onClick={() => navigate(`/positions/${position.id}`)} data-cy="stage-column" data-stage-id="1">Ver proceso</Button>
                                     <Button variant="secondary">Editar</Button>
                                 </div>
                             </Card.Body>

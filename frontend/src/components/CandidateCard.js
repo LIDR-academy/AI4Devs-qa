@@ -1,6 +1,5 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
 import { Draggable } from 'react-beautiful-dnd';
+import { Card } from 'react-bootstrap';
 
 const CandidateCard = ({ candidate, index, onClick }) => (
     <Draggable key={candidate.id} draggableId={candidate.id} index={index}>
@@ -11,6 +10,9 @@ const CandidateCard = ({ candidate, index, onClick }) => (
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
                 onClick={() => onClick(candidate)}
+                data-cy="candidate-card"
+                data-candidate-id={candidate.id}
+                data-stage-id={candidate.stageId}
             >
                 <Card.Body>
                     <Card.Title>{candidate.name}</Card.Title>
