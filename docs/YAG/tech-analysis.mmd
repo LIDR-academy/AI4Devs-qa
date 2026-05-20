@@ -1,0 +1,30 @@
+flowchart TD
+    A[Cliente Web] --> B[Frontend React]
+    B <--> C[API REST]
+    C <--> D[Backend Express]
+    
+    D --> E[Capa de Presentación]
+    E --> F[Controladores]
+    
+    D --> G[Capa de Aplicación]
+    G --> H[Servicios]
+    
+    D --> I[Capa de Dominio]
+    I --> J[Modelos/Entidades]
+    I --> K[Repositorios]
+    
+    D --> L[Infraestructura]
+    L --> M[Prisma ORM]
+    M --> N[Base de Datos PostgreSQL]
+    
+    O[Sistema de Archivos] <--> L
+    
+    subgraph "Agregados Principales"
+    J1[Candidate] --- J2[Education]
+    J1 --- J3[WorkExperience]
+    J1 --- J4[Resume]
+    J5[Company] --- J6[Position]
+    J5 --- J7[Employee]
+    J8[InterviewFlow] --- J9[InterviewStep]
+    J10[Application] --- J11[Interview]
+    end
