@@ -1,0 +1,23 @@
+[
+    {
+        "candidateId": 1,
+        "fullName": "John Doe",
+        "currentInterviewStep": "CV Review",
+        "averageScore": 4.5,
+        "applicationId": 101
+    },
+    {
+        "candidateId": 2,
+        "fullName": "Jane Smith",
+        "currentInterviewStep": "Technical Interview",
+        "averageScore": 4.8,
+        "applicationId": 102
+    },
+    {
+        "candidateId": 3,
+        "fullName": "Bob Wilson",
+        "currentInterviewStep": "HR Interview",
+        "averageScore": 4.2,
+        "applicationId": 103
+    }
+]

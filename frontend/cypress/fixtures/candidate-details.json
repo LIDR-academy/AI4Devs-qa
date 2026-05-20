@@ -1,0 +1,54 @@
+{
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "+1234567890",
+    "address": "123 Main St, City",
+    "educations": [
+        {
+            "id": 1,
+            "institution": "Universidad de Ejemplo",
+            "title": "Ingeniería en Informática",
+            "startDate": "2015-09-01",
+            "endDate": "2019-06-30"
+        }
+    ],
+    "workExperiences": [
+        {
+            "id": 1,
+            "company": "Tech Corp",
+            "position": "Software Developer",
+            "description": "Desarrollo de aplicaciones web",
+            "startDate": "2019-07-01",
+            "endDate": "2023-12-31"
+        }
+    ],
+    "resumes": [
+        {
+            "id": 1,
+            "filePath": "/uploads/resume.pdf"
+        }
+    ],
+    "applications": [
+        {
+            "id": 101,
+            "position": {
+                "id": 1,
+                "title": "Senior Frontend Developer"
+            },
+            "applicationDate": "2024-01-01",
+            "interviews": [
+                {
+                    "interviewDate": "2024-01-15",
+                    "interviewStep": {
+                        "id": 1,
+                        "name": "CV Review"
+                    },
+                    "notes": "Buen candidato",
+                    "score": 4
+                }
+            ]
+        }
+    ]
+}

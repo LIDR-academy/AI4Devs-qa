@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "Senior Frontend Developer",
+        "contactInfo": "John Manager",
+        "applicationDeadline": "2025-12-31",
+        "status": "Open"
+    },
+    {
+        "id": 2,
+        "title": "Backend Developer",
+        "contactInfo": "Jane Manager",
+        "applicationDeadline": "2025-12-31",
+        "status": "Open"
+    }
+]
