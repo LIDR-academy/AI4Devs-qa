@@ -1,0 +1,48 @@
+{
+  "interviewFlow": {
+    "id": 1,
+    "description": "Proceso de selección para Frontend Developer",
+    "interviewSteps": [
+      {
+        "id": 1,
+        "name": "Screening Inicial",
+        "orderIndex": 1,
+        "interviewType": {
+          "id": 1,
+          "name": "Entrevista HR",
+          "description": "Evaluación inicial con Recursos Humanos"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Entrevista Técnica",
+        "orderIndex": 2,
+        "interviewType": {
+          "id": 2,
+          "name": "Entrevista Técnica",
+          "description": "Evaluación de habilidades técnicas"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Prueba Práctica",
+        "orderIndex": 3,
+        "interviewType": {
+          "id": 3,
+          "name": "Coding Challenge",
+          "description": "Desarrollo de una pequeña aplicación"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Entrevista Final",
+        "orderIndex": 4,
+        "interviewType": {
+          "id": 4,
+          "name": "Entrevista con CTO",
+          "description": "Evaluación final con el CTO"
+        }
+      }
+    ]
+  }
+} 

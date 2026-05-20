@@ -3,15 +3,21 @@ import { Col, Card } from 'react-bootstrap';
 import { Droppable } from 'react-beautiful-dnd';
 import CandidateCard from './CandidateCard';
 
-const StageColumn = ({ stage, index, onCardClick }) => (
+const StageColumn = ({ stage, index, onCardClick, 'data-testid': dataTestId }) => (
     <Col md={3}>
         <Droppable droppableId={`${index}`}>
             {(provided) => (
-                <Card className="mb-4" ref={provided.innerRef} {...provided.droppableProps}>
+                <Card className="mb-4" ref={provided.innerRef} {...provided.droppableProps} data-testid={dataTestId}>
                     <Card.Header className="text-center">{stage.title}</Card.Header>
                     <Card.Body>
                         {stage.candidates.map((candidate, idx) => (
-                            <CandidateCard key={candidate.id} candidate={candidate} index={idx} onClick={onCardClick} />
+                            <CandidateCard 
+                                key={candidate.id} 
+                                candidate={candidate} 
+                                index={idx} 
+                                onClick={onCardClick}
+                                data-testid={`candidate-card-${candidate.id}`}
+                            />
                         ))}
                         {provided.placeholder}
                     </Card.Body>

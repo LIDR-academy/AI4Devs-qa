@@ -1,0 +1,22 @@
+{
+  "positions": [
+    {
+      "id": 1,
+      "title": "Senior Frontend Developer",
+      "description": "Buscamos un desarrollador Frontend Senior con experiencia en React",
+      "status": "ACTIVE",
+      "isVisible": true,
+      "location": "Madrid",
+      "jobDescription": "Desarrollo de aplicaciones web con React",
+      "requirements": "5+ años de experiencia en React, TypeScript",
+      "responsibilities": "Desarrollo de nuevas features, mentoring",
+      "salaryMin": 45000,
+      "salaryMax": 65000,
+      "employmentType": "FULL_TIME",
+      "benefits": "Seguro médico, flexibilidad horaria",
+      "companyDescription": "Empresa líder en tecnología",
+      "applicationDeadline": "2024-12-31",
+      "contactInfo": "hr@company.com"
+    }
+  ]
+} 
