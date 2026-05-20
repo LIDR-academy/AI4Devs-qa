@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+- **Actualiza el archivo [prompts-LPS.md](mdc:prompts/prompts-LPS.md)** con cada prompt escrito por mi, solo lo que yo te pido o pregunto, no lo que tu re spondesen el formato acostumbrado markdown. De esta forma, #Nº de Prompt, modelo consultado y pregunta. Te pongo un ejemplo:
+
+    **Prompt 1:**
+    Cursor (Ask) + Gpt-04
+
+    ```
+    Analiza el proyecto
+    ```
+
+- Piensa lo que vas a hacer **paso a paso**, y no te compliques, haz planteamientos sencillos, y busca la eficacia 
+- Si tienes dudas **pregúntame**, antes de hacer nada
+
