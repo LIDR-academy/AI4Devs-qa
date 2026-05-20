@@ -13,6 +13,9 @@
         "prisma:generate": "npx prisma generate",
         "start:prod": "npm run build && npm start"
     },
+    "prisma": {
+        "seed": "node prisma/seed.js"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",

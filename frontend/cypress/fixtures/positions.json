@@ -1,0 +1,31 @@
+{
+  "position": {
+    "id": 1,
+    "title": "Desarrollador Frontend",
+    "description": "Posición para desarrollador frontend con React",
+    "candidates": [
+      {
+        "id": 1,
+        "firstName": "Juan",
+        "lastName": "Pérez",
+        "email": "juan.perez@example.com",
+        "currentInterviewStep": 1,
+        "applicationId": 1
+      },
+      {
+        "id": 2,
+        "firstName": "María",
+        "lastName": "López",
+        "email": "maria.lopez@example.com",
+        "currentInterviewStep": 2,
+        "applicationId": 2
+      }
+    ],
+    "interviewSteps": [
+      { "id": 1, "name": "CV Review" },
+      { "id": 2, "name": "Phone Interview" },
+      { "id": 3, "name": "Technical Test" },
+      { "id": 4, "name": "Final Interview" }
+    ]
+  }
+} 
