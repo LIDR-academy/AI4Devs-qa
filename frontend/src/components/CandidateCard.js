@@ -1,28 +1,24 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { Draggable } from 'react-beautiful-dnd';
 
-const CandidateCard = ({ candidate, index, onClick }) => (
-    <Draggable key={candidate.id} draggableId={candidate.id} index={index}>
-        {(provided) => (
-            <Card
-                className="mb-2"
-                ref={provided.innerRef}
-                {...provided.draggableProps}
-                {...provided.dragHandleProps}
-                onClick={() => onClick(candidate)}
-            >
-                <Card.Body>
-                    <Card.Title>{candidate.name}</Card.Title>
-                    <div>
-                        {Array.from({ length: candidate.rating }).map((_, i) => (
-                            <span key={i} role="img" aria-label="rating">🟢</span>
-                        ))}
-                    </div>
-                </Card.Body>
-            </Card>
-        )}
-    </Draggable>
-);
+const CandidateCard = ({ candidate, onClick }) => {
+    return (
+        <Card 
+            className="mb-2 shadow-sm" 
+            onClick={onClick}
+            style={{ cursor: 'pointer' }}
+            data-cy={`candidate-${candidate.id}`}
+            data-candidate-id={candidate.id}
+            data-application-id={candidate.applicationId}
+        >
+            <Card.Body className="p-2">
+                <Card.Title className="h6">{candidate.name}</Card.Title>
+                <div className="d-flex justify-content-between align-items-center">
+                    <small className="text-muted">Rating: {candidate.rating || 'N/A'}</small>
+                </div>
+            </Card.Body>
+        </Card>
+    );
+};
 
 export default CandidateCard;
