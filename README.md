@@ -19,6 +19,9 @@ Este proyecto es una aplicación full-stack con un frontend en React y un backen
   - `src/`: Contiene el código fuente para el frontend.
   - `public/`: Contiene archivos estáticos como el archivo HTML e imágenes.
   - `build/`: Contiene la construcción lista para producción del frontend.
+  - `cypress/`: Contiene pruebas end-to-end con Cypress.
+    - `e2e/`: Contiene los archivos de pruebas E2E.
+    - `support/`: Contiene archivos de soporte para las pruebas, como comandos personalizados.
 - `.env`: Contiene las variables de entorno.
 - `docker-compose.yml`: Contiene la configuración de Docker Compose para gestionar los servicios de tu aplicación.
 - `README.md`: Este archivo, contiene información sobre el proyecto e instrucciones sobre cómo ejecutarlo.
@@ -68,7 +71,7 @@ npm install
 ```
 cd backend
 npm run build
-````
+```
 4. Inicia el servidor backend:
 ```
 cd backend
@@ -159,4 +162,69 @@ POST http://localhost:3010/candidates
     }
 }
 ```
+
+## Pruebas End-to-End con Cypress
+
+Este proyecto utiliza Cypress para realizar pruebas end-to-end (E2E) que verifican el correcto funcionamiento de la aplicación desde la perspectiva del usuario.
+
+### Estructura de las pruebas
+
+Las pruebas E2E están organizadas en el directorio `frontend/cypress`:
+
+- `e2e/`: Contiene los archivos de pruebas E2E.
+  - `position.cy.js`: Pruebas para la interfaz de gestión de posiciones y candidatos.
+- `support/`: Contiene archivos de soporte para las pruebas.
+  - `commands.js`: Comandos personalizados, incluyendo funciones para simular arrastrar y soltar.
+  - `e2e.js`: Configuración para las pruebas E2E.
+  - `index.d.ts`: Definiciones de tipos para los comandos personalizados.
+
+### Comandos personalizados
+
+Se han implementado comandos personalizados para facilitar las pruebas:
+
+- `dragAndDrop`: Permite simular la acción de arrastrar y soltar cualquier elemento.
+- `dragAndDropCandidate`: Específico para arrastrar candidatos entre columnas en la interfaz de posiciones.
+
+### Casos de prueba implementados
+
+Las pruebas para la interfaz "Position" cubren:
+
+1. Verificación de la carga correcta de la página, incluyendo:
+   - Título de la posición
+   - Columnas que representan cada fase del proceso
+   - Tarjetas de candidatos en sus columnas correspondientes
+
+2. Verificación del cambio de fase de un candidato:
+   - Simulación del arrastre de tarjetas entre columnas
+   - Verificación de la actualización de la interfaz
+   - Verificación de las llamadas a la API para actualizar el estado
+
+### Ejecutar las pruebas
+
+Para ejecutar las pruebas, utiliza los siguientes comandos:
+
+```bash
+# Para abrir Cypress en modo interactivo
+npm run cypress:open
+
+# Para ejecutar todas las pruebas E2E en modo headless
+npm run e2e
+
+# Para ejecutar solo las pruebas de Position en modo headless
+npm run e2e:position
+```
+
+### Pre-requisitos
+
+Para ejecutar las pruebas, asegúrate de:
+
+1. Tener las dependencias instaladas:
+```bash
+cd frontend
+npm install
+```
+
+2. Tener el backend y la base de datos en ejecución.
+
+3. Tener el frontend en ejecución en http://localhost:3000.
 
