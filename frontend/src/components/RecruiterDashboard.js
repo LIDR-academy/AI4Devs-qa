@@ -9,7 +9,7 @@ const RecruiterDashboard = () => {
             <div className="text-center"> {/* Contenedor para el logo */}
                 <img src={logo} alt="LTI Logo" style={{ width: '150px' }} />
             </div>
-            <h1 className="mb-4 text-center">Dashboard del Reclutador</h1>
+            <h1 className="mb-4 text-center" data-test-id="home-page-title">Dashboard del Reclutador</h1>
             <Row>
                 <Col md={6}>
                     <Card className="shadow p-4">
@@ -23,7 +23,7 @@ const RecruiterDashboard = () => {
                     <Card className="shadow p-4">
                         <h5 className="mb-4">Ver Posiciones</h5>
                         <Link to="/positions">
-                            <Button variant="primary" className="btn-block">Ir a Posiciones</Button>
+                            <Button variant="primary" className="btn-block" data-test-id="go-to-positions">Ir a Posiciones</Button>
                         </Link>
                     </Card>
                 </Col>
