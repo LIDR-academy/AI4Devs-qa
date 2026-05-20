@@ -1,0 +1,30 @@
+{
+  "interviewFlow": {
+    "id": 1,
+    "positionName": "Desarrollador Frontend",
+    "interviewFlow": {
+      "interviewSteps": [
+        {
+          "id": 1,
+          "name": "CV Review",
+          "order": 1
+        },
+        {
+          "id": 2,
+          "name": "Technical Test",
+          "order": 2
+        },
+        {
+          "id": 3,
+          "name": "HR Interview",
+          "order": 3
+        },
+        {
+          "id": 4,
+          "name": "Final Decision",
+          "order": 4
+        }
+      ]
+    }
+  }
+} 

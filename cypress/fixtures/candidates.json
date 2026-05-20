@@ -1,0 +1,37 @@
+[
+  {
+    "candidateId": 1,
+    "fullName": "Ana López",
+    "currentInterviewStep": "CV Review",
+    "averageScore": 4,
+    "applicationId": 101
+  },
+  {
+    "candidateId": 2,
+    "fullName": "Pedro Martínez",
+    "currentInterviewStep": "CV Review",
+    "averageScore": 3,
+    "applicationId": 102
+  },
+  {
+    "candidateId": 3,
+    "fullName": "Laura Sánchez",
+    "currentInterviewStep": "Technical Test",
+    "averageScore": 5,
+    "applicationId": 103
+  },
+  {
+    "candidateId": 4,
+    "fullName": "Roberto Fernández",
+    "currentInterviewStep": "HR Interview",
+    "averageScore": 4,
+    "applicationId": 104
+  },
+  {
+    "candidateId": 5,
+    "fullName": "Carmen Díaz",
+    "currentInterviewStep": "Final Decision",
+    "averageScore": 5,
+    "applicationId": 105
+  }
+] 

@@ -6,5 +6,10 @@
     "schema": "backend/prisma/schema.prisma"
   },
   "devDependencies": {
+    "cypress": "^14.3.3"
+  },
+  "scripts": {
+    "test:e2e": "cypress open",
+    "test:e2e:headless": "cypress run"
   }
 }

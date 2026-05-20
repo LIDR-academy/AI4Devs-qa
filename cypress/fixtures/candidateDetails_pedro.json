@@ -1,0 +1,54 @@
+{
+  "id": 2,
+  "firstName": "Pedro",
+  "lastName": "Martínez",
+  "email": "pedro.martinez@example.com",
+  "phone": "+34 623456789",
+  "address": "Avenida Central 45, Barcelona",
+  "educations": [
+    {
+      "id": 102,
+      "institution": "Universidad Politécnica de Barcelona",
+      "title": "Ingeniería de Sistemas",
+      "startDate": "2015-09-01",
+      "endDate": "2020-06-30"
+    }
+  ],
+  "workExperiences": [
+    {
+      "id": 202,
+      "company": "SoftDev",
+      "position": "Desarrollador Full Stack",
+      "description": "Desarrollo de aplicaciones web con Node.js y React",
+      "startDate": "2020-08-01",
+      "endDate": "2022-12-31"
+    }
+  ],
+  "resumes": [
+    {
+      "id": 302,
+      "filePath": "/resumes/pedro_martinez_cv.pdf"
+    }
+  ],
+  "applications": [
+    {
+      "id": 102,
+      "position": {
+        "title": "Desarrollador Frontend"
+      },
+      "applicationDate": "2023-01-20",
+      "interviews": [
+        {
+          "interviewDate": "2023-01-25",
+          "interviewStep": {
+            "name": "CV Review"
+          },
+          "notes": "Experiencia relevante en desarrollo web",
+          "score": 3
+        }
+      ]
+    }
+  ],
+  "currentInterviewStep": "CV Review",
+  "averageScore": 3
+} 

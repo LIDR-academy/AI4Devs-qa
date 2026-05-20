@@ -1,0 +1,54 @@
+{
+  "id": 1,
+  "firstName": "Ana",
+  "lastName": "López",
+  "email": "ana.lopez@example.com",
+  "phone": "+34 612345678",
+  "address": "Calle Principal 123, Madrid",
+  "educations": [
+    {
+      "id": 101,
+      "institution": "Universidad de Madrid",
+      "title": "Ingeniería Informática",
+      "startDate": "2014-09-01",
+      "endDate": "2019-06-30"
+    }
+  ],
+  "workExperiences": [
+    {
+      "id": 201,
+      "company": "TechCo",
+      "position": "Desarrolladora Frontend",
+      "description": "Desarrollo de aplicaciones web con React",
+      "startDate": "2019-07-01",
+      "endDate": "2022-12-31"
+    }
+  ],
+  "resumes": [
+    {
+      "id": 301,
+      "filePath": "/resumes/ana_lopez_cv.pdf"
+    }
+  ],
+  "applications": [
+    {
+      "id": 101,
+      "position": {
+        "title": "Desarrollador Frontend"
+      },
+      "applicationDate": "2023-01-15",
+      "interviews": [
+        {
+          "interviewDate": "2023-01-20",
+          "interviewStep": {
+            "name": "CV Review"
+          },
+          "notes": "Buen CV, experiencia relevante",
+          "score": 4
+        }
+      ]
+    }
+  ],
+  "currentInterviewStep": "CV Review",
+  "averageScore": 4
+} 

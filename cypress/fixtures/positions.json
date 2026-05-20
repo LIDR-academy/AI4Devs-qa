@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Desarrollador Frontend",
+    "contactInfo": "Juan Pérez",
+    "applicationDeadline": "2023-12-31",
+    "status": "Open"
+  },
+  {
+    "id": 2,
+    "title": "Desarrollador Backend",
+    "contactInfo": "María García",
+    "applicationDeadline": "2023-11-30",
+    "status": "Open"
+  },
+  {
+    "id": 3,
+    "title": "Diseñador UX/UI",
+    "contactInfo": "Carlos Rodríguez",
+    "applicationDeadline": "2023-10-15",
+    "status": "Cerrado"
+  }
+] 
